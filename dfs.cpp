@@ -1,4 +1,4 @@
-//topology sort => something witch depend on other something
+//dfs on graph for a matrix
 #include<iostream>
 #include <string>
 #include <vector>
@@ -8,6 +8,7 @@
 using namespace std;
 typedef long long ll;
 vector<vector<int>>graph;
+vector<bool>visitedd(n);
 int n,a,b;
 void dfs(int i){
     stack<int>s;
@@ -20,6 +21,15 @@ void dfs(int i){
         if(!visited[child]){
             visited[child]=true;
             s.push(child);
+        }
+    }
+}
+void dfs_recusrion(int i)
+{
+    for(auto&child:graph[i]){
+        if(!visitedd[child]){
+            visitedd[child]=true;
+            dfs_recusrion(child);
         }
     }
 }
