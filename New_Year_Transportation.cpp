@@ -57,7 +57,6 @@ int main() {
         cin >> a;
         graph[i].push_back(i + a);
     }
-
     if (bfs(1,t))cout << "YES\n";
     else cout << "NO\n";
     return 0;
